@@ -1,0 +1,25 @@
+<h2 style="color:blue;">Centro de Mensajes</h2>
+<form >
+    <div class="form-group">
+        <label for="user"><b>Usuario:</b></label>
+        <input id="user" class="form-control" type="text" name="user" placeholder="José">
+        <small id="userComment" class="form-text text-muted">Usuario que enviará el mensaje.</small>
+    </div>
+    <div class="form-group">
+        <label for="messageContent"><b>Mensaje:</b></label>
+        <textarea id="messageContent" class="form-control" name="messageContent" rows="1"></textarea>
+    </div>
+    <button class="btn btn-primary mt-3 mb-3" onclick="sendMessage()">Enviar</button>
+</form>
+<hr>
+<div id="messagesRecord">
+    <!-- Se renderizarán los mensajes ya enviados -->
+    {{#each messages}}
+        <span>
+            <b style="color:blue;">{{this.author}}</b>
+            <small style="color:crimson;"> [{{this.date}}] </small> <b style="color:blue;">:</b>
+            <i style="color:green;"> {{this.message}} </i>
+        </span>
+        <br>
+    {{/each}}
+</div>
