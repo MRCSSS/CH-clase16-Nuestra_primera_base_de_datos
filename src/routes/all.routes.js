@@ -1,7 +1,12 @@
-/* ---------------------------- MODULOS -----------------------------*/
-const express = require('express');
-const router = express.Router();
-const path = require('path');
+/* ---------------------------- MODULOS ----------------------------- */
+import { Router } from 'express';
+// import path, { dirname } from 'path';
+import path from 'path';
+
+/* -------------------------- INSTANCIAS  --------------------------- */
+const router = Router();
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 /* ------------------------------ RUTAS -----------------------------*/
 router.get('/', (req, res)=>{
@@ -13,4 +18,4 @@ router.get('*', async (req, res) => {
     res.status(404).send('404 - Page not found!!');
 });
 
-module.exports = router;
+export default router;
